@@ -42,21 +42,15 @@
             <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.WAKE_LOCK" />
-        </config-file>   
+        </config-file>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BackgroundGeoLocation">
                 <param name="android-package" value="com.tenforwardconsulting.cordova.bgloc.BackgroundGpsPlugin"/>
             </feature>
-        </config-file> 
-     </platform>          
+        </config-file>
+     </platform>
 
      <platform name="ios">
-        <!-- required background modes:  App registers for location updates -->
-        <config-file target="*-Info.plist" parent="UIBackgroundModes">
-            <array>
-                <string>location</string>
-            </array>
-        </config-file>
 
         <config-file target="config.xml" parent="/*">
             <feature name="BackgroundGeoLocation">
@@ -67,7 +61,7 @@
         <framework src="AVFoundation.framework" weak="true" />
         <source-file src="src/ios/CDVBackgroundGeoLocation.m" />
         <header-file src="src/ios/CDVBackgroundGeoLocation.h" />
-     </platform>          
+     </platform>
 
 	<!-- wp8 -->
 	<platform name="wp8">
@@ -86,12 +80,12 @@
 
 		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
 			<Capability Name="ID_CAP_LOCATION" />
-		</config-file> 
+		</config-file>
 		<source-file src="src/wp8/BackgroundGeoLocation.cs" />
 		<source-file src="src/wp8/BackgroundGeoLocationOptions.cs" />
 		<source-file src="src/wp8/DebugAudioNotifier.cs" />
 		<source-file src="src/wp8/ExtensionMethods.cs" />
-		<source-file src="src/wp8/IBackgroundGeoLocation.cs" /> 
+		<source-file src="src/wp8/IBackgroundGeoLocation.cs" />
 	</platform>
 
 </plugin>
